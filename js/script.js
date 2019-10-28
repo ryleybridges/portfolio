@@ -29,10 +29,18 @@ const workCardInfo = [
     }
 ];
 
-let workCardDisplay;
-for (var i = 0; i < workCardInfo.length; i++) {
+const otherProjects = [
+        {
+            id: 1,
+            title: `Harcourts Adverts`,
+            description: `Created various advertisements for Harcourts Tawa. These have been created through InDesign and Photoshop. Adverts have been featured in the Kapi-Mana newspaper and in the windows of the Harcourts Tawa office.`,
+            image: ``
+        }
+];
 
-    workCardDisplay += `<div class="card ml-2" style="width: 25rem;">
+let workCardDisplay = ``;
+for (var i = 0; i < workCardInfo.length; i++) {
+    workCardDisplay += `<div class="card ml-2 h-100" style="width: 30rem;">
                             <img src="${workCardInfo[i].image}" class="card-img-top" alt="${workCardInfo[i].title}">
                                 <div class="card-body">
                                     <h5 class="card-title">${workCardInfo[i].title}</h5>
@@ -40,8 +48,6 @@ for (var i = 0; i < workCardInfo.length; i++) {
                                     <a href="${workCardInfo[i].githublink}" class="btn btn-dark">Github Repository</a>
                                 </div>
                             </div>`;
-
-
 }
 
 document.getElementById('workCards').innerHTML = workCardDisplay;

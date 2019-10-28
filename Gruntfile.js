@@ -37,7 +37,7 @@ module.exports = function(grunt){
             }
         },
         jshint: {
-            files: ['js/*.js', 'js/!*.min.js'],
+            files: ['js/*.js', '!js/*.min.js'],
             options: {
                 esversion: 6
             }

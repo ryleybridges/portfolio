@@ -20,7 +20,8 @@
     "bootstrap": "^4.3.1",
     "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.0",
+    "sweetalert2": "^8.18.7"
   },
   "devDependencies": {
     "grunt": "^1.0.4",

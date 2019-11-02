@@ -3,28 +3,27 @@ const workCardInfo = [
         id: 1,
         title: `BookIt Accommodation`,
         description: `Application worked on for class summative. Involved creating an application that would present relevant accommodation to a users input.`,
+        longDescription: `Brief for project was to create a one page site for either a transport application or an accommodation application. Pre-coding involved the UX Process (research, target audience, personas, concept sketches, wireframes, user testing). Full documentation explains the process of how it all came together to the final design.`,
         githublink: `https://github.com/ryleybridges/accommodationApp`,
+        googledrivelink: `https://drive.google.com/file/d/1HC3xu0Gro4Z-Y0cHpVfi0ECcYWn77aA9/view?usp=sharing`,
         image: `images/accommodationapp.png`
     },
     {
         id: 2,
-        title: `Goldie Milk Bar & Eatery`,
-        description: `Table ordering system for class project. Created for the Wellington restaurant Goldie Milk Bar & Eatery.`,
-        githublink: `https://github.com/ryleybridges/summativeux`,
-        image: `images/goldie.png`
-    },
-    {
-        id: 3,
         title: `Geek Culture Store`,
         description: `Speciality costumer to costumer store created for a group project. Has a front end and a back end done separately. Has ability to register account, log in and add, edit and delete items.`,
+        longDescription: `Brief involved working as a group to create a costumer to costumer speciality store. Our group of three chose pop culture as the theme as we all have an interest in it. Followed the UX Process and worked agile in three different sprints.`,
         githublink: `https://github.com/CyborgSemon/summative-3-front`,
+        googledrivelink: `https://drive.google.com/file/d/1zMQH6ugOZhmdXgBoRqLOxYjDfiEp3blX/view?usp=sharing`,
         image: `images/geekculturestore.png`
     },
     {
-        id: 4,
+        id: 3,
         title: `Tawa Taekwondo Website`,
-        description: `Website created for the Tawa Taekwondo Club to give them an online prescence. Allows for users to get in contact with the club. Work in progress.`,
+        description: `To give the Tawa Taekwondo Club an online prescence, I created a website for them as a personal project. A simplistic layout with a contact section for users to get in contact with the club.`,
+        longDescription: `As a member of the Tawa Taekwondo Club, I wanted to give the club an online prescence as there is hardly any information out there on the club and no way to get properly in contact with them. The main intention of this site is to inform potential members on the club's history, what Taekwondo is and a contact form to send a message via email to the club.`,
         githublink: `https://github.com/ryleybridges/tawatkdwebsite`,
+        googledrivelink: ``,
         image: `images/tawatkd.png`
     }
 ];
@@ -34,20 +33,64 @@ const otherProjects = [
             id: 1,
             title: `Harcourts Adverts`,
             description: `Created various advertisements for Harcourts Tawa. These have been created through InDesign and Photoshop. Adverts have been featured in the Kapi-Mana newspaper and in the windows of the Harcourts Tawa office.`,
-            image: ``
+            image: ` `
         }
 ];
 
-let workCardDisplay = ``;
-for (var i = 0; i < workCardInfo.length; i++) {
-    workCardDisplay += `<div class="card ml-2 h-100" style="width: 30rem;">
-                            <img src="${workCardInfo[i].image}" class="card-img-top" alt="${workCardInfo[i].title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${workCardInfo[i].title}</h5>
-                                    <p class="card-text">${workCardInfo[i].description}</p>
-                                    <a href="${workCardInfo[i].githublink}" class="btn btn-dark">Github Repository</a>
-                                </div>
-                            </div>`;
+function cardThumbnails(){
+    let workCardDisplay = ``;
+    for (var i = 0; i < workCardInfo.length; i++) {
+        workCardDisplay += `<div class="card ml-2 h-100" style="width: 30rem;">
+                                <img src="${workCardInfo[i].image}" class="card-img-top" alt="${workCardInfo[i].title}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${workCardInfo[i].title}</h5>
+                                        <p class="card-text">${workCardInfo[i].description}</p>
+                                        <a href="#" class="btn btn-danger workCards" data-id="${workCardInfo[i].id}">Read More</a>
+                                        <a href="${workCardInfo[i].githublink}" class="btn btn-dark" >Github</a>
+                                    </div>
+                                </div>`;
+    }
+
+    document.getElementById('workCards').innerHTML = workCardDisplay;
+
+    var popUp = document.getElementsByClassName('workCards');
+    for (var b = 0; b < popUp.length; b++) {
+        popUp[b].onclick = function(){
+            var id = parseInt(this.dataset.id);
+			workCardPopUp(id);
+        };
+    }
+
 }
 
-document.getElementById('workCards').innerHTML = workCardDisplay;
+cardThumbnails();
+
+function workCardPopUp(workId){
+    var singleWork;
+    for (var y = 0; y < workCardInfo.length; y++){
+		if(workCardInfo[y].id === workId){
+			singleWork = workCardInfo[y];
+			break;
+		}
+    }
+
+    $('#workCards').click(function(){
+        $('#workPopUp').modal('show');
+        document.getElementById('workTitle').innerText = singleWork.title;
+        document.getElementById('workImage').src = singleWork.image;
+        document.getElementById('workLongDescription').innerText = singleWork.longDescription;
+        document.getElementById('buttonLinks').innerHTML = (`<a href="${singleWork.googledrivelink}"><button id="doc" class="btn btn-danger">Documentation</button></a> <a href="${singleWork.githublink}"><button id="github" class="btn btn-dark">Github</button></a>`);
+        if(singleWork.googledrivelink === ``){
+            $('#doc').click(function(){
+                event.preventDefault();
+                Swal.fire({
+                    position: 'top-end',
+                    text: 'There is no documentation for this project'
+                });
+            });
+        }
+    });
+
+
+
+}

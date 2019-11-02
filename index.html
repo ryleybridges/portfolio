@@ -5,6 +5,7 @@
         <title>Ryley Bridges Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -28,11 +29,11 @@
 
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">About Me</h5>
+                        <h5 class="modal-title" id="aboutModalLabel">About Me</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -48,9 +49,30 @@
             </div>
         </div>
 
+        <div class="modal fade" id="workPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="workTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" id="workImage" class="img-fluid">
+                        <p id="workLongDescription"></p>
+                    </div>
+                    <div class="modal-footer" id="buttonLinks">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="node_modules\popper.js\dist\umd\popper.min.js" charset="utf-8"></script>
         <script src="node_modules\jquery\dist\jquery.min.js" charset="utf-8"></script>
         <script src="node_modules\bootstrap\dist\js\bootstrap.min.js" charset="utf-8"></script>
+        <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
         <script src="js/script.js" charset="utf-8"></script>
     </body>
 </html>

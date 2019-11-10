@@ -31,18 +31,18 @@ const workCardInfo = [
         image_four: `images/geekculturestore.png`,
         image_four_caption: `Final website layout`
     },
-    {
-        id: 3,
-        title: `Tawa Taekwondo Website`,
-        description: `To give the Tawa Taekwondo Club an online prescence, I created a website for them as a personal project. A simplistic layout with a contact section for users to get in contact with the club.`,
-        longDescription: `As a member of the Tawa Taekwondo Club, I wanted to give the club an online prescence as there is hardly any information out there on the club and no way to get properly in contact with them. The main intention of this site is to inform potential members on the club's history, what Taekwondo is and a contact form to send a message via email to the club.`,
-        githublink: `https://github.com/ryleybridges/tawatkdwebsite`,
-        googledrivelink: ``,
-        // image_one: ,
-        // image_two: ,
-        // image_three: ,
-        image_four: `images/tawatkd.png`
-    }
+    // {
+    //     id: 3,
+    //     title: `Tawa Taekwondo Website`,
+    //     description: `To give the Tawa Taekwondo Club an online prescence, I created a website for them as a personal project. A simplistic layout with a contact section for users to get in contact with the club.`,
+    //     longDescription: `As a member of the Tawa Taekwondo Club, I wanted to give the club an online prescence as there is hardly any information out there on the club and no way to get properly in contact with them. The main intention of this site is to inform potential members on the club's history, what Taekwondo is and a contact form to send a message via email to the club.`,
+    //     githublink: `https://github.com/ryleybridges/tawatkdwebsite`,
+    //     googledrivelink: ``,
+    //     // image_one: ,
+    //     // image_two: ,
+    //     // image_three: ,
+    //     image_four: `images/tawatkd.png`
+    // }
 ];
 
 const otherProjects = [
@@ -94,7 +94,14 @@ function workCardPopUp(workId){
     $('#workCards').click(function(){
         $('#workPopUp').modal('show');
         document.getElementById('workTitle').innerText = singleWork.title;
-        document.getElementById('workImage').src = singleWork.image;
+        document.getElementById('workImageOne').src = singleWork.image_one;
+        document.getElementById('workImageTwo').src = singleWork.image_two;
+        document.getElementById('workImageThree').src = singleWork.image_three;
+        document.getElementById('workImageFour').src = singleWork.image_four;
+        document.getElementById('workImageCaptionOne').innerText = singleWork.image_one_caption;
+        document.getElementById('workImageCaptionTwo').innerText = singleWork.image_two_caption;
+        document.getElementById('workImageCaptionThree').innerText = singleWork.image_three_caption;
+        document.getElementById('workImageCaptionFour').innerText = singleWork.image_four_caption;
         document.getElementById('workLongDescription').innerText = singleWork.longDescription;
         document.getElementById('buttonLinks').innerHTML = (`<a href="${singleWork.googledrivelink}"><button id="doc" class="btn btn-danger">Documentation</button></a> <a href="${singleWork.githublink}"><button id="github" class="btn btn-dark">Github</button></a>`);
         if(!singleWork.googledrivelink === ``){

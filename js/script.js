@@ -33,29 +33,20 @@ const workCardInfo = [
     },
     {
         id: 3,
-        title: `Tawa Taekwondo Website`,
-        description: `To give the Tawa Taekwondo Club an online prescence, I created a website for them as a personal project. A simplistic layout with a contact section for users to get in contact with the club.`,
-        longDescription: `As a member of the Tawa Taekwondo Club, I wanted to give the club an online prescence as there is hardly any information out there on the club and no way to get properly in contact with them. The main intention of this site is to inform potential members on the club's history, what Taekwondo is and a contact form to send a message via email to a club email address.`,
-        githublink: `https://github.com/ryleybridges/tawatkdwebsite`,
+        title: `Shine NZ`,
+        description: `A school project redesign of a non-profit organisation website. The website had to include an online store and be created as a customisable theme through the CMS Wordpress.`,
+        longDescription: `The brief for this class project was to choose a non-profit organisation and create a customisable Wordpress theme for them. Throughout the project, we communicated with our "client" and got all aspects approved prior to production. The website also had to include an online store, which was created with the Wordpress plugin WooCommerce which helps create the store for you but requires you to include the products. It also gives you the files so you can adapt it to fit your theme.`,
+        githublink: `https://github.com/ryleybridges/shineNZTheme`,
         googledrivelink: ``,
-        image_one: ``,
-        image_one_caption: ``,
-        image_two: ``,
-        image_two_caption: ``,
-        image_three: ``,
-        image_three_caption: ``,
-        image_four: `images/tawatkd.png`,
+        image_one: `shinenz-sketches1.jpeg`,
+        image_one_caption: `Initial sketches to establish my layout`,
+        image_two: `shinenz-sketches2.jpeg`,
+        image_two_caption: `Further sketches, wireframes for post & page layouts`,
+        image_three: `shinenz-prototype.png`,
+        image_three_caption: `Prototype created in UXPin`,
+        image_four: `images/shinenz.png`,
         image_four_caption: `Final website layout`
     }
-];
-
-const otherProjects = [
-        {
-            id: 1,
-            title: `Harcourts Adverts`,
-            description: `Created various advertisements for Harcourts Tawa. These have been created through InDesign and Photoshop. Adverts have been featured in the Kapi-Mana newspaper and in the windows of the Harcourts Tawa office.`,
-            image: ` `
-        }
 ];
 
 function cardThumbnails(){
